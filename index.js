@@ -2,7 +2,7 @@ let jonSnowAttack = 25;
 let jonSnowHealth = 100;
 let jonSnowDefense = 0;
 
-let jamieLannisterAttack = 25;
+let jamieLannisterAttack = 35;
 
 if (jonSnowAttack > jamieLannisterAttack) {
     console.log("Jon snow has better attack than Jamie Lannister");
@@ -14,8 +14,18 @@ if (jonSnowAttack > jamieLannisterAttack) {
 
 if (jonSnowHealth <= jamieLannisterAttack) {
     console.log("Jon Snow has been slain");
-    } else {
-        //jonSnowHealth = jonSnowHealth - jamieLannisterAttack
-        jonSnowHealth -= jamieLannisterAttack
-        console.log(`Jon Snow's health is down to ${jonSnowHealth}`);
-    }
+} else {
+    //jonSnowHealth = jonSnowHealth - jamieLannisterAttack
+    jonSnowHealth -= jamieLannisterAttack
+    console.log(`Jon Snow's health is down to ${jonSnowHealth}`);
+ }
+
+ // Jon picks up a shield
+ jonSnowDefense +=25;
+
+ if (jonSnowHealth <= jamieLannisterAttack - jonSnowDefense) {
+    console.log("Jon Snow has been slain");
+ } else {
+     jonSnowHealth -= (jamieLannisterAttack - jonSnowDefense);
+     console.log (`Jon Snow's health is down to ${jonSnowHealth}`);
+ }
